@@ -1,0 +1,33 @@
+
+<div class="papaDiv">
+    
+    <div>
+        <h1 class="thetitle">Reset Active Directory Password</h1>
+        
+        {{#if errMessage}}
+        <p class="errMessage">{{errMessage}}</p>
+        {{/if}}
+        
+        <form action="/changepassword" method="post">
+                <div class="usernamePwDiv">
+                    <input type="text" name="username" placeholder="Confirm E-mail">
+                    <input type="password" name="password" placeholder="New Password">
+                    <input type="password" name="passwordverify" placeholder="Confirm New Password">
+                    <button type="submit">Reset Password</button>
+                </div>
+        </form>
+        {{#if claims}}
+        <p>CLAIMS: </p>
+        {{#each claims}}
+        <p>{{@key}}  :  {{this}}</p>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>
+
+
+{{!-- <form action="/elsewhere" method="post">
+    <button type="submit">go elsewhere</button>
+</form> --}}
+
+
